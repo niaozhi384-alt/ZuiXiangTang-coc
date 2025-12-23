@@ -1,0 +1,1 @@
+ALTER TABLE `rewards` ADD `rewardTime` timestamp NOT NULL;

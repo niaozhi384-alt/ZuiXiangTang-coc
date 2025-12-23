@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gaming Dark Theme - Orange/Gold Accents */
+:root {
+  --primary: oklch(0.75 0.18 55);
+  --primary-foreground: oklch(0.15 0.01 250);
+  --sidebar-primary: oklch(0.75 0.18 55);
+  --sidebar-primary-foreground: oklch(0.15 0.01 250);
+  --chart-1: oklch(0.75 0.18 55);
+  --chart-2: oklch(0.70 0.15 150);
+  --chart-3: oklch(0.65 0.15 250);
+  --chart-4: oklch(0.70 0.15 320);
+  --chart-5: oklch(0.75 0.15 100);
+  --radius: 0.625rem;
+  --background: oklch(0.10 0.01 250);
+  --foreground: oklch(0.95 0.01 250);
+  --card: oklch(0.14 0.01 250);
+  --card-foreground: oklch(0.95 0.01 250);
+  --popover: oklch(0.14 0.01 250);
+  --popover-foreground: oklch(0.95 0.01 250);
+  --secondary: oklch(0.20 0.02 250);
+  --secondary-foreground: oklch(0.95 0.01 250);
+  --muted: oklch(0.20 0.02 250);
+  --muted-foreground: oklch(0.65 0.02 250);
+  --accent: oklch(0.75 0.18 55);
+  --accent-foreground: oklch(0.15 0.01 250);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.95 0.01 250);
+  --border: oklch(0.25 0.02 250);
+  --input: oklch(0.25 0.02 250);
+  --ring: oklch(0.75 0.18 55);
+  --sidebar: oklch(0.12 0.01 250);
+  --sidebar-foreground: oklch(0.95 0.01 250);
+  --sidebar-accent: oklch(0.20 0.02 250);
+  --sidebar-accent-foreground: oklch(0.95 0.01 250);
+  --sidebar-border: oklch(0.25 0.02 250);
+  --sidebar-ring: oklch(0.75 0.18 55);
+  
+  /* Custom gaming colors */
+  --gold: oklch(0.80 0.16 85);
+  --gold-dark: oklch(0.65 0.14 70);
+  --orange: oklch(0.75 0.18 55);
+  --orange-dark: oklch(0.60 0.16 45);
+  --success: oklch(0.65 0.18 145);
+  --warning: oklch(0.75 0.16 85);
+  --info: oklch(0.65 0.15 250);
+}
+
+/* Dark class inherits from root for this gaming theme */
+.dark {
+  /* Same as root - already dark themed */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+}
+
+@layer utilities {
+  /* Gaming gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Gaming gradient background */
+  .gradient-bg {
+    background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 100%);
+  }
+  
+  /* Gaming card with glow effect */
+  .gaming-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+  }
+  
+  .gaming-card:hover {
+    border-color: var(--orange);
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.1);
+  }
+  
+  /* Status badges */
+  .status-pending {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+  }
+  
+  .status-approved {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+  }
+  
+  .status-rejected {
+    background: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+  }
+  
+  /* Hero background pattern */
+  .hero-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+  }
+}
+
+/* Toast styling for dark theme */
+[data-sonner-toaster] {
+  --normal-bg: var(--card) !important;
+  --normal-text: var(--foreground) !important;
+  --normal-border: var(--border) !important;
+  --success-bg: rgba(76, 175, 80, 0.2) !important;
+  --success-text: #4caf50 !important;
+  --success-border: rgba(76, 175, 80, 0.3) !important;
+  --error-bg: rgba(244, 67, 54, 0.2) !important;
+  --error-text: #f44336 !important;
+  --error-border: rgba(244, 67, 54, 0.3) !important;
+  z-index: 9999 !important;
+}
+
+[data-sonner-toast] {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--foreground) !important;
+}
+
+[data-sonner-toast][data-type="success"] {
+  background: rgba(76, 175, 80, 0.2) !important;
+  border-color: rgba(76, 175, 80, 0.3) !important;
+  color: #4caf50 !important;
+}
+
+[data-sonner-toast][data-type="error"] {
+  background: rgba(244, 67, 54, 0.2) !important;
+  border-color: rgba(244, 67, 54, 0.3) !important;
+  color: #f44336 !important;
+}

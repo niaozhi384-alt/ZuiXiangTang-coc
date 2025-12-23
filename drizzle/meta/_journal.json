@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1766423045117,
+      "tag": "0000_sour_grey_gargoyle",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1766423183307,
+      "tag": "0001_woozy_titanium_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1766425573190,
+      "tag": "0002_dusty_the_phantom",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1766467050698,
+      "tag": "0003_keen_drax",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1766468783737,
+      "tag": "0004_silly_skrulls",
+      "breakpoints": true
+    }
+  ]
+}
